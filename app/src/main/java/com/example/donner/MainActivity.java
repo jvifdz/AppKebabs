@@ -3,6 +3,7 @@ package com.example.donner;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.view.*;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     int posicionLongClick=0;
 
 
+    MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
         dbInterface = new DBInterface(this);
         dbInterface.abre();
         cargarKebab();
+
+
 
         adaptador = new AdaptadorRecycler(misFilas);
         RecyclerView miRecycler = findViewById(R.id.RecyclerViewKebab);
@@ -57,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 });
 
         registerForContextMenu(miRecycler);
+
+
+        mediaPlayer= MediaPlayer.create(this, R.raw.aplausos);
+
+        mediaPlayer.start();
+
 
     }
 
@@ -111,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onContextItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.menuBorrar:
+                mediaPlayer.start();
                 dbInterface.borrarKebab(misFilas.get(posicionLongClick).getId());
                 misFilas.remove(posicionLongClick);
 
