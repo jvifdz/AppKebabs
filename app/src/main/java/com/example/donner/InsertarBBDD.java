@@ -69,7 +69,7 @@ public class InsertarBBDD extends AppCompatActivity implements View.OnClickListe
                 Toast.makeText(getBaseContext(),"Error en la inserccion",Toast.LENGTH_LONG).show();
 
             }else{
-                Toast.makeText(getBaseContext(),"Deporte insertado",Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),"Kebab insertado",Toast.LENGTH_LONG).show();
 
             }
             dbInterface.cierra();

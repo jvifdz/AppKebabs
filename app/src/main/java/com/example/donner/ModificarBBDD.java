@@ -95,7 +95,7 @@ public class ModificarBBDD extends AppCompatActivity implements View.OnClickList
                 Toast.makeText(getBaseContext(),"Error en la inserccion",Toast.LENGTH_LONG).show();
 
             }else{
-                Toast.makeText(getBaseContext(),"Deporte insertado",Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),"Kebab modificado",Toast.LENGTH_LONG).show();
 
             }
             dbInterface.cierra();
