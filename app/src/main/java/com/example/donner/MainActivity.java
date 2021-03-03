@@ -118,12 +118,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
             case   R.id.menuModificar:
-                /*Intent intent = new Intent(this,ModificarBBDD.class);
+                Intent intent = new Intent(this,ModificarBBDD.class);
                 intent.putExtra("id",misFilas.get(posicionLongClick).getId());
-                intent.putExtra("marca",misFilas.get(posicionLongClick).getMarca());
+                intent.putExtra("check",misFilas.get(posicionLongClick).isCheckbox());
+                intent.putExtra("precio",misFilas.get(posicionLongClick).getPrecio());
 
 
-                startActivity(intent);*/
+                startActivity(intent);
                 break;
 
         }
@@ -143,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.menuInsertar){
             startActivity(new Intent(this, InsertarBBDD.class));
         }
+
 
 
         return  true;
